@@ -1,4 +1,5 @@
 # ver.16.01.20
+# Функция генерации данных
 import random as rnd
 def get_data( size=100 ):
     rez=[]
