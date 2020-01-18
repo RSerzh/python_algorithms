@@ -9,12 +9,14 @@ def tst( fname , i=20 ):
     end = tm.time()
     print( 'Время работы =' , end - start )
     return ms
-    
+
 iterations = 1000 * 1000 * 10
 #iterations = 1000 * 1000 * 2
 print("Заполнение массива данными:")
 
-tst( fnc.get_data , iterations )
-tst( fnc.get_data2 , iterations )
-tst( fnc.get_data3 , iterations )
-tst( fnc.get_data4 , iterations )
+# tst( fnc.get_data , iterations )
+# tst( fnc.get_data2 , iterations )
+ms1 = tst( fnc.get_data3 , iterations )
+ms2 = tst( fnc.get_data4 , iterations )
+ms3 = tst( fnc.get_data5 , iterations )
+print(len(ms3))
