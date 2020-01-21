@@ -12,3 +12,8 @@ def get_data( size=100 ):
         rez.append( i )
     #print( "-ДФ" )
     return rez
+
+def get_random_arr( size=50 ):
+    dt = list( range(size) )
+    rnd.shuffle( dt )
+    return dt
