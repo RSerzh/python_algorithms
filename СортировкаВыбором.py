@@ -1,11 +1,5 @@
 import myFunc as mf
 
-rez = mf.get_random_arr( 25 )
-#rez = [ 0,3,3,1,2,6,9,11 ]
-print( 'Исходные данные:' )
-print( rez )
-print('------------')
-
 # Сортировка выбором что сразу пришло в голову
 # Но проблема, если встречаются дубли значений
 def sort1(dt):
@@ -26,6 +20,42 @@ def sort1(dt):
         min = cur
         rez[i] = cur
     print(rez)
-sort1( rez )
 
-#dt = myFunc.get_random_arr()
+# Сортировка выбором с одним массивом
+# и корректной сортировкой дублей
+def sort2(dt):
+    ln = len(dt)
+    border = -1
+    min = None
+    for i in range(0,ln):
+        for j in range(0,ln):
+            if border >= j:
+                continue
+            val = dt[j]
+            if min==None:
+                min = val
+                cur = border + 1
+            else:
+                if min >= val:
+                    min = val
+                    cur = j
+        border +=1
+        a1 = dt[cur]
+        a2 = dt[border]
+        dt[border] = a1
+        dt[cur] = a2
+        min=None
+
+#rez = mf.get_random_arr( 16 )
+rez = [ 55,3,3,1,0,1,2,6,9,11 ]
+print( 'Исходные данные:' )
+print( rez )
+#print('------------')
+
+# На выборке [ 55,3,3,1,0,1,2,6,9,11 ] sort1 вылетел с ошибкой. не справился
+#sort1( rez )
+print('------------')
+
+# С дублями разбирается как надо
+sort2( rez )
+print( rez )
