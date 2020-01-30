@@ -5,7 +5,7 @@ def seek( dt, val, debug=False):
     if (val not in dt):
         print('Значения нет в списке')
         return None
-    
+
     lim = 5000
     ln = len(dt)
     curA = round( ln/2 )
@@ -23,7 +23,7 @@ def seek( dt, val, debug=False):
             else:
                 curA = curA + round( (dlt) / 2 )
         get_val = dt[curA-1]
-        
+
         i +=1
         if( i > lim):
             print(f'Количество итераций поиска большое ({lim}). Похоже на бесконечный цикл. Прерываем.')

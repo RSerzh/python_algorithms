@@ -27,6 +27,7 @@ def sort2(dt):
     ln = len(dt)
     border = -1
     min = None
+    c = 0
     for i in range(0,ln):
         for j in range(0,ln):
             if border >= j:
@@ -39,12 +40,14 @@ def sort2(dt):
                 if min >= val:
                     min = val
                     cur = j
+            c +=1 # Счётчика итераций
         border +=1
         a1 = dt[cur]
         a2 = dt[border]
         dt[border] = a1
         dt[cur] = a2
         min=None
+    print("Итераций =" , c)
 
 #rez = mf.get_random_arr( 16 )
 rez = [ 55,3,3,1,0,1,2,6,9,11 ]
